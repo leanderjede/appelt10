@@ -64,7 +64,7 @@ const Gallery = () => {
             className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
             style={{ lineHeight: "1.2" }}
           >
-            Unsere &apos;s{" "}
+            Unsere {" "}
             <span className="relative whitespace-nowrap text-[#c1a777] dark:text-[#c1a777]">
               <svg
                 aria-hidden="true"

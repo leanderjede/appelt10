@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import React from 'react';
 
@@ -24,9 +26,15 @@ const JobsPage = () => {
     'individuelle Förderung'
   ];
 
+  const closeMobileMenu = () => {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) {
+      menu.style.display = 'none';
+    }
+  };
+
   return (
-    <div className="min-h-screen  bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mt-20 mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -43,8 +51,13 @@ const JobsPage = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Aktuelle Stellenangebote</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {positions.map((position, index) => (
-                <Link key={index} className="flex items-center p-4 bg-[#f8f5f0] rounded-lg" href={`/job/${position.toLowerCase()}`}>
-                  <svg className="h-6 w-6 text-[#f8f5f0]0 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <Link
+                  key={index}
+                  className="flex items-center p-4 bg-[#f8f5f0] rounded-lg"
+                  href={`/job/${position.toLowerCase()}`}
+                  onClick={closeMobileMenu}
+                >
+                  <svg className="h-6 w-6 text-[#f8f5f0] mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                   <span className="text-lg font-medium text-gray-700">{position}</span>
@@ -67,9 +80,6 @@ const JobsPage = () => {
               ))}
             </ul>
           </div>
-
-          {/* CTA Section */}
-         
         </div>
       </div>
     </div>

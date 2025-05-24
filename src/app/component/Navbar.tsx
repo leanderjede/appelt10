@@ -358,20 +358,15 @@ const Navbar = () => {
           >
             Über uns
           </Link>
-          <Link
-              href="/job"
-              className="block text-black hover:bg-white/20 px-3 py-2 rounded-md text-base font-medium"
-            >
-              Jobangebote
-            </Link>
-            <Link
-              href="/imprint"
-              onClick={() => closeMobileMenu()}
+         <Link
+  href="/job"
+  className="block text-black hover:bg-white/20 px-3 py-2 rounded-md text-base font-medium"
+  onClick={() => closeMobileMenu()} // <--- FEHLTE!
+>
+  Jobangebote
+</Link>
 
-              className="block text-black hover:bg-white/20 px-3 py-2 rounded-md text-base font-medium"
-            >Impressum
-              
-            </Link>
+      
           <div>
             <button
               className="w-full text-left text-black hover:bg-white/20 px-3 py-2 rounded-md text-base font-medium focus:outline-none"
